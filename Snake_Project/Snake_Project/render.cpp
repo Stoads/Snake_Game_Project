@@ -18,14 +18,35 @@
 const char* shape[] = { "　", "▲", "◀", "▼", "▶","■" };
 //buff2하고 buff1하고 다른 부분만 화면에 출력해야함.
 void render_screen(char* buff1, char* buff2) {
-	//여기에 구현하시오
-	int background_color,x;
-	char letter_color;
-
-	scanf("%s %d %d", &letter_color, &background_color, &x);
-	set_color(letter_color, background_color);
-	if (buff1 != buff2)
-		printf("%s", buff1);
+	int x = 0, y = 0;
+	auto parsing = [&buff1](int index) {
+		if ('0' <= buff1[index] && buff1[index] <= '9')
+			return buff1[index] - '0';
+		if ('A' <= buff1[index] && buff1[index] <= 'F')
+			return buff1[index] - 'A' + 10;
+	};
+	for (int i = 0; buff1[i];) {
+		goto_xy(x, y);
+		if (buff1[i] == 'n') {
+			x = 0;
+			y++;
+		}
+		//&buff[i]
+		else {
+			if (memcmp(buff1 + i, buff2 + i, 4) != 0) {
+				int font_code = 0, back_code = 0;
+				int shape_code_data[2] = { 0 };
+				font_code = parsing(i);
+				back_code = parsing(i + 1);
+				for (int j = 0; j < 2; j++)
+					shape_code_data[j] = parsing(i + 2 + j);
+				int shape_code = shape_code_data[0] * 16 + shape_code_data[1];
+				set_color(font_code, back_code);
+				printf("%s", shape[shape_code]);
+			}
+			x++;
+		}
+	}
 
 	//건드리지 마시오
 	strcpy_s(buff2, 10000, buff1);
