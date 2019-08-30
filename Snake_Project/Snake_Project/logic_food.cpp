@@ -6,8 +6,8 @@
 #include <stdlib.h>
 using namespace std;
 bool is_eat_food() {
-
-	return false;	//default
+	return snake[0] == food;
+	
 }
 void grow_snake() {
 	
