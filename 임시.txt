@@ -1,0 +1,63 @@
+int arr_x[4]={0,0,-1,1};
+int arr_y[4]={1,-1,0,0}; // 상하좌우
+
+switch (get_key()) {
+	case 0: direction=0; break;//상 
+	case 1: direction=1; break;//좌
+	case 2: direction=2; break;//하
+	case 3: direction=3; break;//우
+	default : break;
+}
+x+=arr_x[direction]; y+=arr_y[direction];    
+ //방향키에 따라 xy변동 미입력시 전에 했던방향 그대로 
+x+=arr_x[direction]; y+=arr_y[direction]; 
+
+if(vec2(x,y)==1){
+	vec2(x,y)=-1;
+	snake.push_front(vec2(x,y));
+} // 사과면 몸만 늘림
+else if(vec2(x,y)==-2){
+	end();
+}// 테두리면 죽음
+else{
+	vec2(x,y)=-1;
+	snake.push_front(vec2(x,y));
+	snake.pop_back();
+}//빈공간일 경우 몸을 늘리고 꼬리를 줄임 vec2(x,y)를 0으로 초기화는 모름 
+if(Vec2(x+arr_x[key],y+arr_y[key])==1) return true; // 돌렸을때 있는곳이면 죽음 ?
+
+
+
+snake[0].x또는 y가 0에 닿거나 x_size / y_size에 닿으면 뒤짐
+
+
+
+--------------------------------------
+/**	logic_snake.cpp
+ *	logic.h 의 뱀 함수 구현
+ *	신진우 파트
+ */
+#include "logic.h"
+#include "code_data.h"
+Vec2 d_dir[] = { Vec2(0,1),Vec2(-1,0),Vec2(0,-1),Vec2(1,0) };
+void move_snake() {
+	snake.push_front(snake[0]+d_dir[direction]);
+}
+bool is_snake_died() {
+	for (int i = 1; i < snake.size(); i++) {
+		if (snake[0]==snake[1])
+			return true;
+	}
+	if (0 > snake[0].x || snake[0].x >= x_size) return true;
+	if (0 > snake[0].y || snake[0].y >= y_size) return true;
+	return false;	//default
+}
+void head_turning(int key) {
+	switch (key) {
+	case UP: if(direction!=DOWN) direction = UP; break;
+	case RIGHT: if(direction != LEFT) direction = RIGHT; break;
+	case DOWN: if(direction != UP) direction = DOWN; break;
+	case LEFT: if(direction != RIGHT) direction = LEFT; break;
+	default: break;
+	}
+}
