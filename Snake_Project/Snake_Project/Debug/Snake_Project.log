@@ -1,3 +1,2 @@
-﻿  logic_snake.cpp
-D:\Github\SnakeProject\Snake_Project\Snake_Project\logic_snake.cpp(12): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+﻿  logic.cpp
   Snake_Project.vcxproj -> D:\Github\SnakeProject\Snake_Project\Debug\Snake_Project.exe

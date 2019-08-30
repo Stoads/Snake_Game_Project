@@ -33,6 +33,7 @@ void get_screen_info(char* buff) {
 	const char down[] = "F003";
 	const char right[] = "F004";
 	const char body[] = "F005";
+	const char apple[] = "C005";
 	auto get_pos = [](int x, int y) {return y * (x_size * 4 + 9) + x * 4;};
 	for (int i = 1; i <= x_size; i++) 
 		for (int j = 1; j <= y_size; j++) 
@@ -58,6 +59,7 @@ void get_screen_info(char* buff) {
 	default:return;
 	}
 	memcpy(buff + get_pos(snake[0].x + 1, snake[0].y + 1), tgt, 4);
+	memcpy(buff + get_pos(food.x + 1, food.y + 1), apple, 4);
 }
 bool logical_action(int key) {
 	if (is_eat_food()) {
