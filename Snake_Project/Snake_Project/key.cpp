@@ -28,7 +28,7 @@ int get_key() {
 		switch (key)
 		{
 		case 224: 
-			judge_special_key(_getch());
+			return judge_special_key(_getch());
 		    break; 
 		case 'W':
 		case 'w':
