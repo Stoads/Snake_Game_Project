@@ -7,10 +7,11 @@
 Vec2 d_dir[] = { Vec2(0,-1),Vec2(-1,0),Vec2(0,1),Vec2(1,0) };
 void move_snake() {
 	snake.push_front(snake[0]+d_dir[direction]);
+	snake.pop_back();
 }
 bool is_snake_died() {
 	for (int i = 1; i < snake.size(); i++) {
-		if (snake[0]==snake[1])
+		if (snake[0]==snake[i])
 			return true;
 	}
 	if (0 > snake[0].x || snake[0].x >= x_size) return true;
