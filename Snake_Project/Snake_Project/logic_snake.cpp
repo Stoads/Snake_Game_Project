@@ -4,7 +4,7 @@
  */
 #include "logic.h"
 #include "code_data.h"
-Vec2 d_dir[] = { Vec2(0,1),Vec2(-1,0),Vec2(0,-1),Vec2(1,0) };
+Vec2 d_dir[] = { Vec2(0,-1),Vec2(-1,0),Vec2(0,1),Vec2(1,0) };
 void move_snake() {
 	snake.push_front(snake[0]+d_dir[direction]);
 }
