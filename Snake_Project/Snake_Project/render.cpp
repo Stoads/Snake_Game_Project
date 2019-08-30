@@ -44,7 +44,7 @@ void render_screen(char* buff1, char* buff2) {
 				set_color(font_code, back_code);
 				printf("%s", shape[shape_code]);
 			}
-			x++;
+			x += 4;
 		}
 	}
 
