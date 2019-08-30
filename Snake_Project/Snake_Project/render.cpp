@@ -30,8 +30,8 @@ void render_screen(char* buff1, char* buff2) {
 		if (buff1[i] == 'n') {
 			x = 0;
 			y++;
+			i++;
 		}
-		//&buff[i]
 		else {
 			if (memcmp(buff1 + i, buff2 + i, 4) != 0) {
 				int font_code = 0, back_code = 0;
@@ -45,6 +45,7 @@ void render_screen(char* buff1, char* buff2) {
 				printf("%s", shape[shape_code]);
 			}
 			x++;
+			i += 4;
 		}
 	}
 
