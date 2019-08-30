@@ -1,2 +1,6 @@
 #TargetFrameworkVersion=v4.0:PlatformToolSet=v142:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit:WindowsTargetPlatformVersion=10.0
-Debug|Win32|C:\Users\yag03\source\repos\Snake_Project\|
+<<<<<<< HEAD
+Debug|Win32|D:\Microsoft Visual Studio\snake project\Snake_Project\|
+=======
+Debug|Win32|D:\Github\SnakeProject\Snake_Project\|
+>>>>>>> 17afcfad4773128d7c07237a8060ea83c820c163
