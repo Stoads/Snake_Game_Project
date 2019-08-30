@@ -25,6 +25,9 @@ typedef struct Vec2 {
 	struct Vec2 operator/(int k) {
 		return Vec2(x / k, y / k);
 	}
+	bool operator==(Vec2 desc) {
+		return this->x == desc.x && this->y == desc.y;
+	}
 }Vec2;
 extern std::deque<Vec2> snake;
 extern int direction;
