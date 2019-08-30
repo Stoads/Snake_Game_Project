@@ -1,2 +1,14 @@
 #TargetFrameworkVersion=v4.0:PlatformToolSet=v142:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit:WindowsTargetPlatformVersion=10.0
+<<<<<<< HEAD
 Debug|Win32|D:\Microsoft Visual Studio\snake project\Snake_Project\|
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+Debug|Win32|C:\Users\김홍기\Documents\인보snake\Snake_Project\|
+=======
+Debug|Win32|D:\Microsoft Visual Studio\snake project\Snake_Project\|
+>>>>>>> 1f0883ebf2da3d93c96c975f1178a4697e172420
+=======
+Debug|Win32|D:\Github\SnakeProject\Snake_Project\|
+>>>>>>> 17afcfad4773128d7c07237a8060ea83c820c163
+>>>>>>> 303555dcee13d5eb5fdc78ffa20793277051888b
